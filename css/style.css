@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+#carousel{
+    position: relative;
+    margin-top: 30px;
+}
+img{
+    max-width: 1000px;
+}
+.photo-description{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+
+}
+#previous{
+    position: absolute;
+    right: 40px;
+    bottom: 150px;
+    cursor: pointer;
+    font-size: 30px;
+}
+#next{
+    position: absolute;
+    left: 40px;
+    bottom: 150px;
+    cursor: pointer;
+    font-size: 30px;
+}
