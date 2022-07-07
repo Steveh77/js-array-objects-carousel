@@ -23,10 +23,18 @@
 .image{
     display: none;
 }
-img{
+.img{
     height: 600px;
     width: 1000px;
 }
+.thumbnails-img{
+    width: calc(100%/5);
+    height: 100px;
+}
+#thumbnails-container{
+    display: flex;
+}
+
 .photo-description{
     position: absolute;
     top: 20px;
@@ -60,4 +68,7 @@ img{
 }
 .d-active{
     display: block;
+}
+.thumbnails-d-active{
+    filter: brightness(0.5);
 }

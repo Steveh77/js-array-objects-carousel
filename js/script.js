@@ -15,6 +15,9 @@
 // variabili
 
 const imageContainer = document.getElementById('images-container');
+// bonus thumbnails
+const thumbnailsContainer = document.getElementById('thumbnails-container')
+
 const imagesArray = [
     {
         url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -54,9 +57,9 @@ const imagesArray = [
 let pic = ""
 for (let i = 0; i < imagesArray.length; i++) {
     const element = imagesArray[i];
-    console.log(element)
+    
     pic += `<div class="image">
-            <img src="${element["url"]}" alt="">       
+            <img src="${element["url"]}" alt="" class="img">       
             <div class="photo-description">
                 <h3>${element["title"]}</h3>
                 <p>${element["description"]}</p>
@@ -66,14 +69,28 @@ for (let i = 0; i < imagesArray.length; i++) {
 
 imageContainer.innerHTML = pic
 
+// stampare le thumbnails nell'html
+let thumb = ""
+for (let i = 0; i < imagesArray.length; i++) {
+    const element = imagesArray[i];
+    console.log(element)
+    thumb += `<img class="thumbnails-img " src="${element["url"]}" alt="">`
+}
+
+thumbnailsContainer.innerHTML = thumb
+
+
+
 
 // creare next e prev
 let images = document.querySelectorAll('.image')
+let thumbnails = document.querySelectorAll('.thumbnails-img')
 const next = document.getElementById('next')
 const prev = document.getElementById('previous')
 // variabile active a 0
 let active = 0;
 images[active].classList.add('d-active');
+thumbnails[active].classList.add('thumbnails-d-active');
 
 
 
@@ -81,12 +98,14 @@ images[active].classList.add('d-active');
 next.addEventListener('click', function () {
     // prima rimuovo l'immagine active
     images[active].classList.remove('d-active');
+    thumbnails[active].classList.remove('thumbnails-d-active');
     // poi aggiungo quella che diventerà active
     active++;
-    if (active === images.length) {
+    if (active === images.length ) {
         active = 0;
     }
     images[active].classList.add('d-active');
+    thumbnails[active].classList.add('thumbnails-d-active');
 })
 
 
@@ -95,6 +114,7 @@ next.addEventListener('click', function () {
 prev.addEventListener('click', function () {
     // prima rimuovo l'immagine  active
     images[active].classList.remove('d-active');
+    thumbnails[active].classList.remove('thumbnails-d-active');
     // poi aggiungo quella che diventerà active
     active--;
     if (active === -1) {
@@ -106,6 +126,7 @@ prev.addEventListener('click', function () {
     console.log(active)
 
     images[active].classList.add('d-active');
+    thumbnails[active].classList.add('thumbnails-d-active');
 })
 
 
