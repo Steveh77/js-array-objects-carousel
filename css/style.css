@@ -13,10 +13,19 @@
 
 #carousel{
     position: relative;
+    height: 600px;
+    width: 1000px;
     margin-top: 30px;
 }
+#images-container{
+    position: relative;
+}
+.image{
+    display: none;
+}
 img{
-    max-width: 1000px;
+    height: 600px;
+    width: 1000px;
 }
 .photo-description{
     position: absolute;
@@ -29,17 +38,26 @@ img{
     text-shadow: 2px 2px 4px black;
 
 }
-#previous{
+.buttons{
     position: absolute;
-    right: 40px;
     bottom: 150px;
-    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 50px;
+    color: white;
+}
+#previous{
     font-size: 30px;
+    cursor: pointer;
 }
 #next{
-    position: absolute;
-    left: 40px;
-    bottom: 150px;
-    cursor: pointer;
     font-size: 30px;
+    cursor: pointer;
+}
+.d-none{
+    display: none;
+}
+.d-active{
+    display: block;
 }
